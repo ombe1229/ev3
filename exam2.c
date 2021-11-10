@@ -6,7 +6,7 @@
 #pragma config(Motor,  motorC,          rightMotor,    tmotorEV3_Large, PIDControl, driveRight, encoder)
 
 
-float now, mot;
+float mot;
 
 task main() {
 	while(SensorValue[touchSensor] == 0) {};
@@ -17,10 +17,9 @@ task main() {
 	}
 
 	while(SensorValue[touchSensor] == 0) {
-		now = getColorReflected(colorSensor);
-		mot = (now - 38) * 1.2;
-		motor[leftMotor] = 30 - mot;
-		motor[rightMotor] = 30 + mot;
+		mot = (getColorReflected(colorSensor) - 38) * 1.1;
+		motor[leftMotor] = 50 - mot;
+		motor[rightMotor] = 50 + mot;
 	}
 
 	motor[leftMotor] = -100;
