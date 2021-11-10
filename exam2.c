@@ -18,8 +18,8 @@ task main() {
 
 	while(SensorValue[touchSensor] == 0) {
 		mot = (getColorReflected(colorSensor) - 37) * 2.0;
-		motor[leftMotor] = 70 - mot;
-		motor[rightMotor] = 70 + mot;
+		motor[leftMotor] = 68 - mot;
+		motor[rightMotor] = 68 + mot;
 	}
 
 	motor[leftMotor] = -100;
