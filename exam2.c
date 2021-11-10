@@ -11,15 +11,15 @@ float mot;
 task main() {
 	while(SensorValue[touchSensor] == 0) {};
 	while(SensorValue[touchSensor] == 1) {
-		moveMotorTarget(leftMotor, 360, 100);
-		moveMotorTarget(rightMotor, 360, -100);
+		moveMotorTarget(leftMotor, 370, 100);
+		moveMotorTarget(rightMotor, 370, -100);
 		waitUntilMotorStop(leftMotor);
 	}
 
 	while(SensorValue[touchSensor] == 0) {
-		mot = (getColorReflected(colorSensor) - 38) * 1.1;
-		motor[leftMotor] = 50 - mot;
-		motor[rightMotor] = 50 + mot;
+		mot = (getColorReflected(colorSensor) - 37) * 2.0;
+		motor[leftMotor] = 70 - mot;
+		motor[rightMotor] = 70 + mot;
 	}
 
 	motor[leftMotor] = -100;
